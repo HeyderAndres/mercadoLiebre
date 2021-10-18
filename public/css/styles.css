@@ -12,16 +12,17 @@ body{
 
 /*---------------------------------Header --------------------------------*/
 header{
+    width: 100vw;
     background-color:#EAC926;
     padding-top: 10px; 
 }
 
  header section{
-     width: 100vw;
+     width: 100%;
      display: flex;
      flex-wrap: wrap;
 
-    }
+}
 
 header section .logo{
     width: 30%;
@@ -71,7 +72,7 @@ header section div  i{
     display: block;
 }
 
-header section  p{
+header section div p{
 font-size: 12px;
 display: block;
 }
@@ -85,6 +86,7 @@ header nav ul{
     margin-top: 10px;;
     margin-bottom: 10px;
 }
+
 header nav ul li a{
     text-decoration: none;
     color: black;
@@ -96,7 +98,6 @@ header nav ul li a{
 header nav ul li a i{
     margin-left: 5px;
 }
-
 
 header section .burger-menu{
     display: block;
@@ -114,11 +115,11 @@ header section .burger-menu{
 }
 
  .homeBanner{
-     width: 100vw;
+     width: 100%;
+     
 }
 
-
-/*aqui inicia main*/
+/*----------------------------------main Home-------------------------------*/
 main{
     padding-bottom: 30px;
     justify-content: center;
@@ -174,12 +175,14 @@ main article .precio{
     display: block;
     text-align: left;
 }
+
 main article .descuento{
     color: #39b54a;
     width: 70%;
     display: block;
     text-align: center;
 }
+
 main article .descuento, p{
     font-size: 16px;
    
@@ -189,7 +192,75 @@ main section article .descripcion p strong{
     display: none;
 }
 
-/*aquí inicia el footer*/
+/*-----------------------------Main Register------------------------------*/
+main section form{
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+}
+main section form .form-title{
+    text-align: center;
+    margin: 10px;
+}
+
+main section form label{
+    width: 75%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+
+}
+
+main section form input{
+    display: flex;
+    border: white;
+    width: 75%;
+    height: 30px;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+}
+
+main section form #perfilUsuario{
+    width: 15px;
+    height: 15px;
+
+}
+
+main section form #categorias{
+    width: 15px;
+    height: 15px;
+}
+
+main section form #foto{
+height: 40px;
+margin: 0;
+}
+
+main section form div{
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+main section form div label{
+    width: 30%;
+
+}
+main section form div button{
+    background-color:#1259c3 ;
+    color: white;
+    width: 30%;
+    height: 30px;
+    border-radius: 10px;
+    border: none; 
+    margin:5px; 
+    min-width: 100px;
+}
+/*----------------------------- footer--------------------------------------*/
 footer{
     display: flex;
     justify-content: center;
@@ -207,7 +278,7 @@ footer article i{
     color: #1259c3;
 }
 
-
+/*------------------------------media query tablet-------------------------*/
 @media (min-width:361px){
 
 /*---------------------------------Header --------------------------------*/
@@ -217,29 +288,24 @@ footer article i{
 
 
     header section div {
-        width: 35%;
+        width: 30%;
         margin: auto;
     }
-
-    main section article{
-        box-shadow : 0px 0px 10px rgb( 100 , 100 , 100 );      
-    }
-   
+  
     header section nav{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     }
 
     header section nav ul{
         display: flex;
-    }
+     }
 
     header section nav ul li{
-        padding: 10px;
-
+        padding: 5px;
     }
 
     header section .burger-menu{
@@ -279,15 +345,13 @@ main section article .descripcion p strong{
     text-align: left;
 
 }
-
+main section article{
+    box-shadow : 0px 0px 10px rgb( 100 , 100 , 100 );      
 }
-
+}
+/*------------------------------media query computador-------------------------*/
 @media (min-width:769px){
-    main section{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+
     main section h2{
         width: 90vw;
         text-align: left;

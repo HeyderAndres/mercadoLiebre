@@ -4,64 +4,311 @@
     padding: 0px;
     box-sizing: border-box;
 }
-header{
-    background-color:#EAC926;
-}
-
-header section img{
-    width: 360px;
-}
 
 body{
-    font-family:'Roboto', sans-serif ;
+    font-family: 'roboto', sans-serif;
+    font-size: 12px;  
+}
+
+/*---------------------------------Header --------------------------------*/
+header{
     background-color:#EAC926;
+    padding-top: 10px; 
 }
 
-p{
-    font-size: 12px;
+ header section{
+     width: 100vw;
+     display: flex;
+     flex-wrap: wrap;
+
+    }
+
+header section .logo{
+    width: 30%;
+    padding: 10px;
+ 
 }
 
-h2{
-    font-size: 24px;
+header section form{
+    width: 70%;
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
 }
 
-.precio{
-    font-size: 18px;
+header section form button{
+    width: 15%;
+    height: 30px;
+    background-color: white;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    color: #666;
 }
 
-.descuento{
-    font-size: 16px;
-}
-
-p strong{
-    font-size: 16px;
-}
-
-footer{
-    text-align:  center;
-
-}
-
-ul li{
-    list-style: none;
-}
-
-nav ul li a{
-    color:black;
-    text-decoration: none;
-         
-}
-.burger-menu{
-    background-color:#1259c3;
-    width: 25px;
-    text-align: center;
-    border-radius: 2px;
-}
-.fa-bars{
+header section form input{
+    width: 85%;
+    height: 30px;
+    border: none;
+    border-radius: 10px 0 0 10px;
     
-    color: white;
 }
 
+header section form input::placeholder{
+    padding: 10px;
+    border-radius: 10%;
+}
+
+header section div {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+header section div  i{
+    padding-right: 5px;
+    display: block;
+}
+
+header section  p{
+font-size: 12px;
+display: block;
+}
+
+header nav{
+    display: none;
+}
+
+header nav ul{
+    list-style: none;
+    margin-top: 10px;;
+    margin-bottom: 10px;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    display: flex;
+    text-align: center;
+}
+
+header nav ul li a i{
+    margin-left: 5px;
+}
+
+
+header section .burger-menu{
+    display: block;
+    margin: auto;
+    background-color:#1259c3 ;
+    width: 30px;
+    height: 30px;
+    color: white;
+    border-radius: 5px;
+    padding: 7px;
+    font-size: 16px;
+    margin-bottom: 10px;
+
+   
+}
+
+ .homeBanner{
+     width: 100vw;
+}
+
+
+/*aqui inicia main*/
+main{
+    padding-bottom: 30px;
+    justify-content: center;
+    background-color: #ebebeb;
+
+}
+
+main section h2{
+    font-size: 24px;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+main section article{
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin:auto;
+    margin-bottom:10px ;
+    background-color: white;
+}
+
+main section article img{
+    width: 90vw;
+}
+
+main section article .descripcion{
+    border: 1px solid #ebebeb;
+    width: 90vw;
+    padding:15px;
+    display: flex;
+    position: relative;
+}
+
+main section article .descripcion i{
+    padding: 5px;;
+    border: 1px solid #39b54a;
+    border-radius: 50%;
+    color: #39b54a;
+    width: 30px ;
+    height: 30px;
+    display: block;
+    position: absolute;
+    right: 20px;
+    top:-15px;
+      
+}
+
+main article .precio{
+    font-size: 18px;
+    width: 30%;
+    display: block;
+    text-align: left;
+}
+main article .descuento{
+    color: #39b54a;
+    width: 70%;
+    display: block;
+    text-align: center;
+}
+main article .descuento, p{
+    font-size: 16px;
+   
+}
+
+main section article .descripcion p strong{
+    display: none;
+}
+
+/*aquí inicia el footer*/
+footer{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+footer article{
+    padding-bottom: 30px;
+    width: 90vw;
+    text-align: center;
+}
+
+footer article i{
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #1259c3;
+}
+
+
+@media (min-width:361px){
+
+/*---------------------------------Header --------------------------------*/
+    header section form{
+        width: 35%;
+    }
+
+
+    header section div {
+        width: 35%;
+        margin: auto;
+    }
+
+    main section article{
+        box-shadow : 0px 0px 10px rgb( 100 , 100 , 100 );      
+    }
+   
+    header section nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    }
+
+    header section nav ul{
+        display: flex;
+    }
+
+    header section nav ul li{
+        padding: 10px;
+
+    }
+
+    header section .burger-menu{
+        display: none;
+    }
+
+/*---------------------------------Main --------------------------------*/
+
+main section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+main section h2{
+    width: 90vw;
+    text-align: left;
+}
+main section article{
+    width: 45vw;
+    flex-wrap: wrap;
+    align-items: stretch;
+
+}
+
+main section article img{
+    width: 45vw;
+}
+
+main section article .descripcion{
+    width: 45vw;
+    flex-wrap: wrap;
+}
+
+main section article .descripcion p strong{
+    display: block;
+    padding-top: 10PX;
+    text-align: left;
+
+}
+
+}
+
+@media (min-width:769px){
+    main section{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    main section h2{
+        width: 90vw;
+        text-align: left;
+    }
+    main section article{
+        width: 22.5vw;
+        flex-wrap: wrap;
+        align-items: stretch;
+    
+    }
+    
+    main section article img{
+        width: 22.5vw;
+    }
+    
+    main section article .descripcion{
+        width: 22.5vw;
+        flex-wrap: wrap;
+    }
+    
+}
 
 
 

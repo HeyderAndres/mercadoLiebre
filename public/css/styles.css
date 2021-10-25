@@ -27,6 +27,7 @@ header{
 header section .logo{
     width: 30%;
     padding: 10px;
+    min-width: 75px;
  
 }
 
@@ -52,12 +53,7 @@ header section form input{
     height: 30px;
     border: none;
     border-radius: 10px 0 0 10px;
-    
-}
-
-header section form input::placeholder{
     padding: 10px;
-    border-radius: 10%;
 }
 
 header section div {
@@ -96,7 +92,7 @@ header nav ul li a{
 }
 
 header nav ul li a i{
-    margin-left: 5px;
+    padding-left: 5px;
 }
 
 header section .burger-menu{
@@ -114,7 +110,7 @@ header section .burger-menu{
    
 }
 
- .homeBanner{
+ header section .homeBanner{
      width: 100%;
      
 }
@@ -260,10 +256,13 @@ main section form div button{
     margin:5px; 
     min-width: 100px;
 }
+main section form div button:hover{
+    background-color: #0022AA;
+}
 /*----------------------------- footer--------------------------------------*/
 footer{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     padding: 10px;
 }
 footer article{
@@ -279,7 +278,7 @@ footer article i{
 }
 
 /*------------------------------media query tablet-------------------------*/
-@media (min-width:361px){
+@media (min-width:481px){
 
 /*---------------------------------Header --------------------------------*/
     header section form{
@@ -287,7 +286,7 @@ footer article i{
     }
 
 
-    header section div {
+    header section #frase {
         width: 30%;
         margin: auto;
     }
@@ -309,7 +308,7 @@ footer article i{
     }
 
     header section .burger-menu{
-        display: none;
+            display: none;
     }
 
 /*---------------------------------Main --------------------------------*/
@@ -340,22 +339,17 @@ main section article .descripcion{
 }
 
 main section article .descripcion p strong{
-    display: block;
+    display: none;
     padding-top: 10PX;
     text-align: left;
 
 }
-main section article{
-    box-shadow : 0px 0px 10px rgb( 100 , 100 , 100 );      
-}
+
+
 }
 /*------------------------------media query computador-------------------------*/
 @media (min-width:769px){
 
-    main section h2{
-        width: 90vw;
-        text-align: left;
-    }
     main section article{
         width: 22.5vw;
         flex-wrap: wrap;
@@ -371,7 +365,40 @@ main section article{
         width: 22.5vw;
         flex-wrap: wrap;
     }
-    
+
+    main section article:hover{
+        box-shadow : 0px 0px 10px rgb( 100 , 100 , 100 ); 
+    }
+
+    main section article:hover .descripcion i{
+        transform: rotate(-90deg);
+    }
+    main section article:hover p strong{
+        display: block;
+    }
+
+/*----------------------------------footer pc----------------------------*/
+
+footer section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+footer section article{
+    width: 30vw;
+}
+
+footer  #copy{
+display: block;
+width: 90vw;
+margin: auto;
+text-align: center;
+}
+
+footer section article i:hover{
+    color:#EAC926;
+}
 }
 
 

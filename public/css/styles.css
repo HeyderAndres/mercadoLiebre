@@ -12,7 +12,7 @@ body{
 
 /*---------------------------------Header --------------------------------*/
 header{
-    width: 100vw;
+
     background-color:#EAC926;
     padding-top: 10px; 
 }
@@ -57,7 +57,7 @@ header section form input{
 }
 
 header section div {
-    width: 100vw;
+    /* width: 100vw; */
     display: flex;
     justify-content: center;
     padding: 10px;
@@ -137,6 +137,8 @@ main section article{
     margin:auto;
     margin-bottom:10px ;
     background-color: white;
+    transition: box-shadow, 2s;
+                               
 }
 
 main section article img{
@@ -144,7 +146,7 @@ main section article img{
 }
 
 main section article .descripcion{
-    border: 1px solid #ebebeb;
+    border-top: 1px solid #ebebeb;
     width: 90vw;
     padding:15px;
     display: flex;
@@ -160,9 +162,12 @@ main section article .descripcion i{
     height: 30px;
     display: block;
     position: absolute;
-    right: 20px;
+    left: 20px;
     top:-15px;
-      
+    transition: transform 1s,
+                left, 2s;
+               
+
 }
 
 main article .precio{
@@ -220,13 +225,13 @@ main section form input{
     padding: 10px;
 }
 
-main section form #perfilUsuario{
+main section form #comprador, #vendedor{
     width: 15px;
     height: 15px;
 
 }
 
-main section form #categorias{
+main section form #Electro, #Moda, #Hogar, #Juguetería, #VidaSana{
     width: 15px;
     height: 15px;
 }
@@ -353,8 +358,7 @@ main section article .descripcion p strong{
     main section article{
         width: 22.5vw;
         flex-wrap: wrap;
-        align-items: stretch;
-    
+        align-items: stretch;    
     }
     
     main section article img{
@@ -367,15 +371,24 @@ main section article .descripcion p strong{
     }
 
     main section article:hover{
-        box-shadow : 0px 0px 10px rgb( 100 , 100 , 100 ); 
+        box-shadow : 0px 0px 15px rgb( 100 , 100 , 100 );
+    }
+
+   
+    main section article .descripcion i:hover{
+          transform: rotate(-90deg); 
     }
 
     main section article:hover .descripcion i{
-        transform: rotate(-90deg);
+        left:80%;
     }
+
+
     main section article:hover p strong{
-        display: block;
+       display: block;
     }
+
+ 
 
 /*----------------------------------footer pc----------------------------*/
 

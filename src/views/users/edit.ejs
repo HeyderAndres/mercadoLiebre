@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include ('../partials/head.ejs');%>
+
+<body>
+    <%- include ('../partials/header.ejs') %> 
+    <main>
+        <section class="formu">
+        <form  action="/users/editUser/<%= locals.user && user.id?user.id:"" %>/?_method=PUT" method="POST" enctype="multipart/form-data">
+            <h2 class="form-title">Ingrese los siguientes datos para crear su cuenta</h2>
+            <label for="nombreYApellido">Nombres y Apellidos:</label>
+            <input type="text" name="nombreYApellido"
+                    id="nombreYApellido" 
+                    placeholder="Ej: Heider Arellano Oviedo" 
+                    minlength="3" 
+                    required
+                    value="<%= locals.user && user.nombreYApellido?user.nombreYApellido:"" %> ">
+            <label for="nombreUsuario"> Nombre de Usuario:</label>
+            <input type="user" 
+                    name="usuario"
+                    id="usuario" 
+                    placeholder="Ej: Heyder16" 
+                    required
+                    value="<%= locals.user && user.usuario?user.usuario:"" %> ">
+            <label for="email">Email:</label>
+            <input type="email" 
+                    name="email" 
+                    id="email" 
+                    placeholder="Ej: heider@example.co" 
+                    required
+                    value="<%= locals.user && user.email?user.email:"" %> ">
+            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" 
+                    name="fechaNacimiento" 
+                    id="fechaNacimiento" 
+                    required
+                    value="<%= locals.user && user.fechaNacimiento?user.fechaNacimiento:"" %>">
+            <label for="domicilio">Domicilio:</label>
+            <input type="text" 
+                    name="domicilio" 
+                    id="domicilio" 
+                    placeholder="Ej: Turbaco bolivar, barrio X calle Y N 16" 
+                    required
+                    value="<%= locals.user && user.domicilio?user.domicilio:"" %> ">
+            <label for="perfilUsuario">Perfil de Usuario:</label>
+            <div><label><input type="radio" name="perfilUsuario" id="comprador" value="comprador"
+                <%=locals.user && user.perfilUsuario=="comprador"?'checked':""%>>comprador</label>
+            <label><input disabled type="radio" name="perfilUsuario" id="vendedor" value="vendedor"
+                <%=locals.user && user.perfilUsuario=="vendedor"?'checked':""%>>vendedor</label></div>
+ <!--            <label for="categorias">Categorias de interes:</label>
+            <label><input type="checkbox" name="categorias" id="Electro">Electro</label>
+            <label><input type="checkbox" name="categorias" id="Moda">Moda</label>
+            <label><input type="checkbox" name="categorias" id="Hogar">Hogar</label>
+            <label><input type="checkbox" name="categorias" id="Juguetería">Juguetería</label>
+            <label><input type="checkbox" name="categorias" id="VidaSana">Vida sana</label> -->
+            <label for="foto">Foto de Usuario</label>
+
+            <input type="file" 
+                    name="foto"
+                    id="foto" 
+                    accept=".png, .jpg, .svg"
+                    >
+            <label for="contrasena">Contraseña:</label>
+            <input type="password"
+                    name="contrasena"
+                    id="contrasena"
+                    required>
+            <label for="reContrasena">Repetir Contraseña:</label>
+            <input type="password"
+                    name="reContrasena"
+                    id="reContrasena"
+                    required>
+            <div><button type="submit">Enviar</button>
+            <button type="reset">Borrar</button></div>
+        </form>
+    </section>
+    </main>
+    <%-include ('../partials/footer');%>
+</body>
+
+</html>

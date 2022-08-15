@@ -1,150 +1,338 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 *{
+
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+}
+a:visited, a:active, a{
+    text-decoration: none;
+    text-transform: none;
+    color: black
 }
 
 body{
     font-family: 'roboto', sans-serif;
     font-size: 12px;  
 }
-
 /*---------------------------------Header --------------------------------*/
-header{
-
-    background-color:#EAC926;
-    padding-top: 10px; 
+.warning{
+    color:red;
+    font-weight: bold;
+    font-style: italic;
 }
 
- header section{
-     width: 100%;
+header section{
+     height: 7vh;
      display: flex;
-     flex-wrap: wrap;
-
+     background-color:#fff159;
 }
-
-header section .logo{
-    width: 30%;
-    padding: 10px;
+header section .content-top-bar{
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 5px;
+}
+header section .content-top-bar .logo{
+    width: 12%;
     min-width: 75px;
- 
+    margin: auto;
 }
-
-header section form{
+header section .content-top-bar #nav-search{
     width: 70%;
+    padding: 0;
+}
+header section .content-top-bar #nav-search form{
+    width: 95%;
     margin:auto;
     display: flex;
     flex-wrap: wrap;
-    padding: 10px;
 }
-
-header section form button{
+header section .content-top-bar #frase{
+    display: none;
+}
+header section .content-top-bar .burger-menu{
+    display: block;
+    width: 40px;
+    height: 40px;
+    color: #666;
+    border-radius: 5px;
+    font-size: 24px;
+}
+header section .content-top-bar .burger-menu i{
+    margin:-1 auto;
+    text-align: center;
+}
+header .homeBanner{
+    overflow: hidden;
+    height: 25vh;
+    width: 100%;
+}
+header .homeBanner img{
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+}
+header section .content-top-bar form button{
     width: 15%;
-    height: 30px;
+    height: 40px;
     background-color: white;
     border: none;
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 2px 2px 0;
     color: #666;
 }
-
-header section form input{
+header section .content-top-bar form input{
     width: 85%;
-    height: 30px;
+    height: 40px;
     border: none;
-    border-radius: 10px 0 0 10px;
     padding: 10px;
-}
 
+}
+header section form input:focus{
+    outline: none;
+}
 header section div {
     /* width: 100vw; */
     display: flex;
     justify-content: center;
     padding: 10px;
 }
-
 header section div  i{
     padding-right: 5px;
     display: block;
 }
-
 header section div p{
 font-size: 12px;
 display: block;
 }
-
 header nav{
+    width: 100%;
+    background-color: white;
+    margin-top: 10px;
+    z-index: 1;
     display: none;
+}
+nav.mostrarMenu{
+    display: block;
 }
 
 header nav ul{
     list-style: none;
-    margin-top: 10px;;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
+header nav ul li{
+    display: block;
+    margin: auto;
+    padding: 10px;
+    color: #666;
+    font-size: 12px;
+    font-weight: bold;
 
+}
 header nav ul li a{
     text-decoration: none;
-    color: black;
+    color:black;
     font-size: 12px;
     display: flex;
     text-align: center;
+    justify-content: center;
 }
-
 header nav ul li a i{
     padding-left: 5px;
 }
-
-header section .burger-menu{
-    display: block;
-    margin: auto;
-    background-color:#1259c3 ;
-    width: 30px;
-    height: 30px;
-    color: white;
-    border-radius: 5px;
-    padding: 7px;
-    font-size: 16px;
-    margin-bottom: 10px;
-
-   
-}
-
- header section .homeBanner{
-     width: 100%;
-     
-}
-
-/*----------------------------------main Home-------------------------------*/
-main{
-    padding-bottom: 30px;
-    justify-content: center;
-    background-color: #ebebeb;
-
-}
-
-main section h2{
-    font-size: 24px;
-    text-align: center;
-    padding-bottom: 10px;
-    padding-top: 10px;
-}
-main section article{
+/******************************profile**************************/
+section.profile{
+    height: auto;
     width: 90vw;
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    margin:auto;
-    margin-bottom:10px ;
-    background-color: white;
-    transition: box-shadow, 2s;
-                               
+    align-items: center;
+    margin-top: 15px;
 }
 
+section.profile div.informacion{
+    padding: 10px;
+    font-size: 1.2em;
+}
+section.profile div.informacion table{
+    width: 50%;
+    margin: 0 auto;
+}
+section.profile div.informacion table th{
+    text-align: center;
+    padding-right: 5px;
+    width: 10%;
+}
+
+section.profile div.informacion table td{
+    text-align: center;
+    width: 30%;
+    padding:5px
+}
+section.profile div.informacion table caption{
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+
+section.profile div.img{
+    width: 20em;
+    height: 20em;
+}
+
+section.profile div.img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+/**********************************list-products***************************************/
+section.list-products{
+    width: 95vw;
+    display: block;
+    height: auto;
+}
+
+section.list-products table{
+    width: 100%;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+section.list-products table th,td{
+    width: 20%; 
+    border-bottom: 1px solid #666;
+
+}
+section.list-products table td.nombre{
+    text-align: left;
+    width: 35%;
+}
+
+
+section.list-products table td form{
+    width: 20%;
+}
+
+/*----------------------produt ditail---------------------------*/
+.product-detail{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    padding: 10px;
+    margin-top: 10px;
+    margin: auto;
+    border-radius: 5px;
+    background-color: white;
+    height: auto;
+}
+.product-detail article {
+
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    overflow: hidden;
+}
+.product-detail article:hover{
+    box-shadow : none;
+    height: 100%;
+}
+.product-detail .product-information ul{
+    width: 90%;
+    align-items:center;
+}
+.product-detail .product-information ul li{
+    text-decoration: none;
+    list-style: none;
+    padding: 5px;
+}
+.product-detail .product-information ul li p{
+    display: block;
+    max-width: 100%;
+
+}
+.product-detail .product-information ul li p.nombre{
+    text-align: center;
+}
+.product-detail .product-information ul li p.precio{
+    text-decoration: line-through;
+    font-size: 18px;
+}
+.product-detail .product-information ul li p.descuento{
+    font-size: 20px;
+    margin-top: 0;
+    text-align: left;
+}
+.product-detail .product-information ul li input{
+    padding: 5px;
+}
+.product-detail article img{
+    display: block;
+    width: 80%;
+    margin: auto;
+}
+.product-detail .product-information{
+    width: 95%;
+    padding: 10px;
+    display: flex; 
+    border: #ebebeb 1px solid;
+    border-radius: 3px;
+    flex-wrap:wrap;
+    margin: 0 auto;
+    justify-content: center;
+
+}
+.product-detail .product-information ul .product-button{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/*----------------------------------main Home-------------------------------*/
+main{
+    padding-top: 10px;;
+    padding-bottom: 10px;
+    justify-content: center;
+    background-color: #ebebeb;
+}
+main section{
+    overflow: scroll;
+    background-color: #ebebeb;
+    width: 95%;
+    height: 55vh;
+    margin: auto;
+    display: flex;
+}
+main  h2{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 10px;
+    padding-top: 15px;
+}
+main section article{
+    width: 95vw;
+    margin-right: 10px;  
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+    transition: box-shadow, 2s, margin-bottom, 2s;
+                               
+}
+main section article a{
+    text-decoration: none;
+    text-transform: none;
+}
+main section article a:hover{
+    text-decoration: none;
+    text-transform: none;
+}
 main section article img{
     width: 90vw;
 }
-
 main section article .descripcion{
     border-top: 1px solid #ebebeb;
     width: 90vw;
@@ -152,9 +340,8 @@ main section article .descripcion{
     display: flex;
     position: relative;
 }
-
 main section article .descripcion i{
-    padding: 5px;;
+    padding: 5px;
     border: 1px solid #39b54a;
     border-radius: 50%;
     color: #39b54a;
@@ -169,26 +356,25 @@ main section article .descripcion i{
                
 
 }
-
 main article .precio{
-    font-size: 18px;
+    font-size: 24px;
     width: 30%;
     display: block;
+    color: #666;
     text-align: left;
+    margin-top: 10px;
 }
-
 main article .descuento{
     color: #39b54a;
     width: 70%;
     display: block;
     text-align: center;
+    margin-top: 10px;
 }
-
 main article .descuento, p{
     font-size: 16px;
    
 }
-
 main section article .descripcion p strong{
     display: none;
 }
@@ -200,12 +386,12 @@ main section form{
     flex-direction: column;
     align-items: center;
     font-size: 14px;
+    margin: auto;
 }
 main section form .form-title{
     text-align: center;
     margin: 10px;
 }
-
 main section form label{
     width: 75%;
     font-weight: bold;
@@ -214,7 +400,6 @@ main section form label{
     margin-top: 10px;
 
 }
-
 main section form input{
     display: flex;
     border: white;
@@ -224,23 +409,19 @@ main section form input{
     margin: 10px;
     padding: 10px;
 }
-
 main section form #comprador, #vendedor{
     width: 15px;
     height: 15px;
 
 }
-
 main section form #Electro, #Moda, #Hogar, #Juguetería, #VidaSana{
     width: 15px;
     height: 15px;
 }
-
 main section form #foto{
 height: 40px;
 margin: 0;
 }
-
 main section form div{
     width: 75%;
     display: flex;
@@ -275,120 +456,348 @@ footer article{
     width: 90vw;
     text-align: center;
 }
-
 footer article i{
     font-size: 2em;
     margin-bottom: 10px;
     color: #1259c3;
+}
+footer section .copy{
+    text-align: center;
 }
 
 /*------------------------------media query tablet-------------------------*/
 @media (min-width:481px){
 
 /*---------------------------------Header --------------------------------*/
-    header section form{
-        width: 35%;
-    }
+header .homeBanner{
+    height: 45vh;
+}
+
+header section{
+    min-height: 12vh;
+}
+
+header section .content-top-bar{
+    width:50%;
+    background-color: #fff159;
+}
 
 
-    header section #frase {
+header section .content-top-bar nav{
+    width: 90vw;
+    margin: 0 auto;
+    background-color: #fff159;
+    z-index: auto;
+    justify-content:  space-between;
+;
+}
+
+header section .content-top-bar .burger-menu{
+    display: none;
+}
+
+
+header section #frase {
         width: 30%;
         margin: auto;
+        display: none;
     }
-  
-    header section nav{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    }
-
-    header section nav ul{
+    
+header section .content-top-bar{
+        width: 100%;
         display: flex;
-     }
+        justify-content: space-between;
+        align-items: center;
+ }
+  
+header section .content-top-bar nav{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: center;
+}
 
-    header section nav ul li{
-        padding: 5px;
-    }
+header section .content-top-bar nav ul{
+display: flex;
+}
 
-    header section .burger-menu{
-            display: none;
-    }
+header section .content-top-bar nav ul li{
+    padding: 5px;
+}
+
+
 
 /*---------------------------------Main --------------------------------*/
 
-main section{
+ main section{
+    overflow: visible;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+} 
+
+main section article{
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100vw;  
+    height: 50vh;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+main section article a{
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-}
-main section h2{
-    width: 90vw;
-    text-align: left;
-}
-main section article{
-    width: 45vw;
-    flex-wrap: wrap;
-    align-items: stretch;
+    flex-direction: column;
 
 }
 
-main section article img{
-    width: 45vw;
+main section article a img{
+    max-height: 80%;
+    max-width: 40%;
+    margin: auto;
 }
 
 main section article .descripcion{
-    width: 45vw;
-    flex-wrap: wrap;
+    max-width: 40%;
+    height: 80%;
+    margin: auto;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    border:none;
+}
+
+main section article .descripcion p strong{
+    display: block;
+}
+
+main section article .descripcion p{
+margin-left: 0;
+text-align: start;
+font-size: 18px;
+justify-content: center;
+}
+main section article .descripcion i{
+    display:none;
+}
+
+}
+
+main section form{
+    width: 70vw;
+
+}
+
+/*------------------------------media query computador-------------------------*/
+@media (min-width:769px){
+
+
+header section {
+   height: 50%;
+   min-height: auto;
+}
+
+header .homeBanner {
+    display: block;
+    position: relative;
+}
+
+ header section .content-top-bar{
+    width:90%; 
+    height: 100%;
+    display: flex;
+    z-index: 1;
+}
+
+header section .content-top-bar #frase{
+    display: flex;
+    width: 25%;
+    flex-direction: row;
+    align-items: center;
+}
+
+header section .content-top-bar #nav-search{
+    width: 50%;
+}
+
+header section .content-top-bar nav{
+    justify-content: space-around;
+}
+
+header section .content-top-bar nav ul li a{
+    font-weight: normal;
+    font-size: 13px;
+}
+
+header section .content-top-bar .logo{
+width: 12%;
+align-items: flex-start;
+}
+
+
+     
+main section {
+    height: 70vh;
+    justify-content: center;
+    flex-direction: column;
+    overflow: scroll;
+    
+}
+main section::-webkit-scrollbar, ::-webkit-scrollbar-corner{
+    overflow: auto;
+}
+
+main section article{
+    width: 19%;
+    height: 330px;
+}
+main article .precio{
+    font-size: 14px;
+    display: block;   
+    width: 45%;
+    color: #666;
+    margin-top: 10px;
+
+}
+
+main article .descuento{
+    color: #39b54a;
+    width: 45%;
+    display: block;
+    text-align: right;
+}
+
+main article .descuento, p{
+    display: flex;
 }
 
 main section article .descripcion p strong{
     display: none;
-    padding-top: 10PX;
+}
+
+
+main section article a{
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+main section article a img{
+    padding: 10px;
+    max-width: 75%;
+}
+
+main section article .descripcion{
+    position: relative;
+    flex-wrap: wrap;
+    padding:15px;
+    justify-content: space-evenly;
+    border-top: #ebebeb 1px solid;
+    flex-direction: row;
+    max-width: 100%;
+    height: auto;
+}
+
+main section article .descripcion p{
+    font-size: 14px;
+}
+
+main section article .descripcion i{
+    display: block;
+}
+
+main section article:hover{
+    box-shadow : 0px 0px 15px rgb( 100 , 100 , 100 );
+    height: 90%;
+}
+
+
+main section article .descripcion i:hover{
+        transform: rotate(-90deg); 
+}
+
+main section article:hover .descripcion i{
+    left:80%;
+}
+
+main section article:hover p strong{
+    margin-top: 15px;
+    display:block;
+}
+
+main section.formu{
+    width: 40%;
+    height: auto;
+}
+main section.formu form{
+    width: 100%;   
+}
+main section.formu form #foto{
+    padding: 25px;
+}
+
+/*******************************product detail***********************/
+.product-detail{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.product-detail article{
+    width: 45%;
+    height: auto;
+}
+
+.product-detail article img{
+    width: 100%;
+    text-align: center;
+}
+
+.product-detail .product-information{
+    width: 45%;
+}
+
+.product-detail article:hover{
+    height: auto;
+}
+
+section.profile div.informacion table{
+    width: 30%;
+    margin: 0 auto;
+}
+section.profile div.informacion table th{
+    text-align: center;
+    padding-right: 5px;
+    width: 10%;
+}
+
+section.profile div.informacion table td{
     text-align: left;
-
+    width: 30%;
+    padding:5px
 }
 
 
+/*list-product*/
+section.list-products{
+    width: 80vw;
 }
-/*------------------------------media query computador-------------------------*/
-@media (min-width:769px){
-
-    main section article{
-        width: 22.5vw;
-        flex-wrap: wrap;
-        align-items: stretch;    
-    }
-    
-    main section article img{
-        width: 22.5vw;
-    }
-    
-    main section article .descripcion{
-        width: 22.5vw;
-        flex-wrap: wrap;
-    }
-
-    main section article:hover{
-        box-shadow : 0px 0px 15px rgb( 100 , 100 , 100 );
-    }
-
-   
-    main section article .descripcion i:hover{
-          transform: rotate(-90deg); 
-    }
-
-    main section article:hover .descripcion i{
-        left:80%;
-    }
 
 
-    main section article:hover p strong{
-       display: block;
-    }
+section.search {
+    width: 90vw;
+    flex-direction: row; 
+    flex-wrap: wrap;
+}
+main section.search article p strong{
+    margin-top: 15px;
+    display:block;
+}
 
- 
+main section.search article:hover{
+    height: auto;
+}
 
 /*----------------------------------footer pc----------------------------*/
 
@@ -410,9 +819,5 @@ text-align: center;
 }
 
 footer section article i:hover{
-    color:#EAC926;
-}
-}
-
-
-
+    color:#fff159;
+}}

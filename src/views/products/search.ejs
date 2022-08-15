@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include ('../partials/head.ejs');%>
+
+<body>
+    <%- include ('../partials/header.ejs') %>
+    <main>
+         <h2>Resultados de busqueda</h2>
+        <section class="search">
+            <% if (products) { %>
+                <% for( let j = 0; j < products.length; j++ ) { %>
+                <article>
+                    <a href="/products/detail/<%=products[j].id%>">
+                    <img src="/images/products/<%= products[j].image? products[j].image:''%>" alt="cafetera">
+                    <div class=descripcion><i class="fas fa-truck"></i>
+                        <p class="precio">$<%= products[j].price? products[j].price:''%></p>
+                        <p class="descuento"><%= products[j].discount? products[j].discount:''%>%OFF</p>
+                        <p><strong><%= products[j].name? products[j].name:''%></strong></p>
+                    </div>
+                </a>
+                </article>
+                <% } %>
+                <% } %>
+        </section>
+    </main>
+    <%-include ('../partials/footer');%>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include ('../partials/head.ejs');%>
+
+<body>
+    <%- include ('../partials/header.ejs') %>
+    <main>
+        <section class="formu">
+            <form action="/products/edit/<%=product.id%>/?_method=PUT" method="POST" enctype="multipart/form-data">
+
+                <h2 class="form-title">Para crear producto, no olvide llenar todos los campos</h2>
+                <label for="name">Nombre Producto:</label>
+                <input type="text" name="name" id="name" placeholder="Ej: Computador" minlength="3"
+                        value="<%=locals.product && product.name?product.name:''%>">
+                <p color="red"><%=locals.errors && errors.name?errors.name.msg:''%></p>
+
+                <label for="price">Precio:</label>
+                <input type="text" name="price" id="price" placeholder="Ej: 1200000"
+                        value="<%=locals.product && product.price?product.price:''%>">
+                <p color="red"><%=locals.errors && errors.price?errors.price.msg:''%></p>
+
+                <label for="discount">Descuento::</label>
+                <input type="text" name="discount" id="discount" placeholder="Ej: 10"
+                        value="<%=locals.product && product.discount?product.discount:''%>">
+                <p color="red"><%=locals.errors && errors.discount?errors.discount.msg:''%></p>
+
+                <label for="category">Categoria</label>
+                <select  name="category" id="category">
+                    <option value="">---------</option>
+                    <option value="in-sale" <%=locals.product && product.category=="in-sale"? 'selected':""%>>in-sale</option>
+                    <option value="visited" <%=locals.product && product.category=="visited"?'selected':""%>>visited</option>
+                    <option value="normal" <%=locals.product && product.category=="normal"?'selected':""%>>normal</option>
+                </select>
+                <p color="red"><%=locals.errors && errors.category?errors.category.msg:''%></p>
+
+                <label for="description">Descripción:</label>
+                <input type="text" name="description" id="description" placeholder="Ej: tamaño 21 pulgadas, etc."
+                        value="<%=locals.product && product.description?product.description:''%>">
+
+                <p color="red"><%=locals.errors && errors.description?errors.description.msg:''%></p>
+                <label for="foto">Foto del Producto</label>
+                <img src="/images/products/<%= product.image %>"  width="150px" height="150px" alt="">
+                <input type="file" name="image" id="foto" accept=".png, .jpg, .svg">
+                <div><button type="submit">Enviar</button>
+                    <button type="reset">Borrar</button></div>
+            </form>
+        </section>
+    </main>
+    <%-include ('../partials/footer');%>
+</body>
+
+</html>

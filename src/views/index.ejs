@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include ('./partials/head.ejs');%>
+
+<body>
+    <%- include ('./partials/header.ejs') %>
+    <main>
+         <h2>Sección de Ofertas</h2>
+        <section >
+            <% if (locals.visited) { %>
+                <% for( let j = 0; j < visited.length; j++ ) { %>
+                <% if (visited[j].category== "visited") { %>
+                <article>
+                    <a href="/products/detail/<%=visited[j].id%>">
+                    <img src="/images/products/<%= visited[j].image? visited[j].image:''%>" alt="cafetera">
+                    <div class=descripcion><i class="fas fa-truck"></i>
+                        <p class="precio">$<%= visited[j].price? visited[j].price:''%></p>
+                        <p class="descuento"><%= visited[j].discount? visited[j].discount:''%>%OFF</p>
+                        <p><strong><%= visited[j].name? visited[j].name:''%></strong></p>
+                    </div>
+                </a>
+                </article>
+                <% } %>
+                <% } %>
+                <% } %>
+        </section>
+     
+        <h2>Basado en tu última visita</h2>
+        <section>
+            <% if (locals.in_sale) { %>
+            <% for( let i = 0; i < in_sale.length; i++ ) { %>
+            <% if (in_sale[i].category== "in-sale") { %>
+            <article>
+            <a href="/products/detail/<%=in_sale[i].id%>">
+                <img src="/images/products/<%= in_sale[i].image? in_sale[i].image:''%>" alt="cafetera">
+                <div class=descripcion><i class="fas fa-truck"></i>
+                    <p class="precio">$<%= in_sale[i].price? in_sale[i].price:''%></p>
+                    <p class="descuento"><%= in_sale[i].discount? in_sale[i].discount:''%>% OFF</p>
+                    <p><strong><%= in_sale[i].name? in_sale[i].name:''%></strong></p>
+                </div>
+            </a>
+            </article>
+            <% } %>
+            <% } %>
+            <% } %>
+        </section>
+       
+
+    </main>
+    <%-include ('./partials/footer');%>
+</body>
+
+</html>

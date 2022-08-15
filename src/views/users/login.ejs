@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include ('../partials/head.ejs');%>
+
+<body>
+    <%- include ('../partials/header.ejs') %> 
+    <main>
+        <section>
+        <form action="/users/login" method="post">
+            <label for="nombreUsuario">Email de usuario:</label>
+            <input type="user" name="usuario" id="usuario" placeholder="Ej: hola@email.com" required>
+
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" name="contrasena" id="contrasena" required>        
+                <p class="warning"><%=locals.errors && errors.email? errors.email.msg:""%></p>
+         <input type="checkbox" name="recordarme" id="recordarme">Recordar Usuario
+                <div><button type="submit">Ingresar</button></div>
+            
+        </form>
+    </section>
+    </main>
+    <%-include ('../partials/footer');%>
+</body>
+
+</html>

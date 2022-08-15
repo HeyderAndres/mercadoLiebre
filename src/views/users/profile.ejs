@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include ('../partials/head.ejs');%>
+
+<body>
+    <%- include ('../partials/header.ejs') %>
+    <main>
+        <section class="profile">
+            <div class="img">
+                <img src="/images/avatars/<%=user?user.image:""%>" alt="">
+            </div>
+            <div class="informacion">
+                <table>
+                    <caption>Datos de Usuario</caption>
+
+                    <tr>
+                        <th>Nombre</th>
+                        <td><%=user?user.nombreYApellido:""%></td>
+
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td><%=user?user.email:""%></td>
+                    </tr>
+                    <tr>
+                        <th>Usuario</th>
+                        <td><%=user?user.usuario:""%></td>
+                    </tr>
+                    <tr>
+                        <th>Domicilio</th>
+                        <td><%=user?user.domicilio:""%></td>
+                    </tr>
+                    <tr>
+                        <th>Perfil</th>
+                        <td><%=user?user.perfilUsuario:""%></td>
+                    </tr>
+
+                </table>
+                <form action="/users/edit/<%=user.id%>" method="GET">
+                    <div class="editProfile"><button type="submit">Editar</button></div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <%-include ('../partials/footer');%>
+</body>
+
+</html>

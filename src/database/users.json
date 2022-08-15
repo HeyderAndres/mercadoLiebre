@@ -1,0 +1,13 @@
+[
+ {
+  "id": 1,
+  "nombreYApellido": "Heider Arellano",
+  "usuario": "Heider",
+  "email": "heidera@email.com",
+  "fechaNacimiento": "2014-06-11",
+  "domicilio": "Turbaco Bolivar",
+  "perfilUsuario": "vendedor",
+  "contrasena": "$2a$10$atJGoWAEJxU8ebyMRBptw.KAggM5jor/YwjveXSN9hyYYa9s51XxW",
+  "image": "1660105672163_avatar.jpg"
+ }
+]

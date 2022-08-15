@@ -72,11 +72,11 @@ let productosController = {
             image: image,
           };
           productsModel.editProduct(id, data);
-          return res.redirect('products/detail/'+id);
+          return res.redirect('/products/detail/'+id);
     }else{
       let nameImage = req.file?req.file.filename:"";
       productsModel.deleteImageByName(nameImage);
-      return res.redirect(`products/edit/${id}`, { errors: errors.mapped(), old: req.body });
+      return res.redirect(`/products/edit/${id}`, { errors: errors.mapped(), old: req.body });
     }
     
   },
